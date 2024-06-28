@@ -1,5 +1,7 @@
 package one.digitalinnovation.gof.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,23 @@ public class ClienteServiceImpl implements ClienteService {
 	
 	// Strategy: Implementar os métodos definidos na interface.
 	// Facade: Abstrair integrações com subsistemas, provendo uma interface simples.
+
+	@Override
+public Iterable<Cliente> buscarPorCidade(String cidade) {
+    List<Cliente> clientesEncontrados = new ArrayList<>();
+
+    Iterable<Cliente> todosClientes = buscarTodos();
+
+    for (Cliente cliente : todosClientes) {
+        String cidadeCliente = cliente.getEndereco().getLocalidade();
+        if (cidade.equalsIgnoreCase(cidadeCliente)) {
+            clientesEncontrados.add(cliente);
+        }
+    }
+
+    return clientesEncontrados;
+}
+
 
 	@Override
 	public Iterable<Cliente> buscarPorNome(String nome) {

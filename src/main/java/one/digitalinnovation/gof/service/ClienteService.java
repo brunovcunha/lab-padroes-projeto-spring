@@ -14,6 +14,9 @@ public interface ClienteService {
 	// Buscando pelo nome
 	Iterable<Cliente> buscarPorNome(String nome);
 
+	// Buscando por Cidade
+	Iterable<Cliente> buscarPorCidade(String cidade);
+
 	Iterable<Cliente> buscarTodos();
 
 	Cliente buscarPorId(Long id);
@@ -23,5 +26,7 @@ public interface ClienteService {
 	void atualizar(Long id, Cliente cliente);
 
 	void deletar(Long id);
+
+	
 
 }

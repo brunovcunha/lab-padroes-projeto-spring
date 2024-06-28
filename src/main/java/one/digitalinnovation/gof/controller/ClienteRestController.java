@@ -38,6 +38,11 @@ public class ClienteRestController {
 	public ResponseEntity<Iterable<Cliente>> buscarPorNome(@PathVariable String nome) {
 		return ResponseEntity.ok(clienteService.buscarPorNome(nome));
 	}
+
+	@GetMapping("/cidade/{cidade}")
+    public ResponseEntity<Iterable<Cliente>> buscarPorCidade(@PathVariable String cidade) {
+        return ResponseEntity.ok(clienteService.buscarPorCidade(cidade));
+    }
 	
 
 	@GetMapping("/{id}")
