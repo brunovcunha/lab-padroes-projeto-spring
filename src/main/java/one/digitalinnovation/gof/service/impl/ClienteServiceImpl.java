@@ -34,6 +34,11 @@ public class ClienteServiceImpl implements ClienteService {
 	// Facade: Abstrair integrações com subsistemas, provendo uma interface simples.
 
 	@Override
+	public Iterable<Cliente> buscarPorNome(String nome) {
+		return buscarPorNome(nome);
+	}
+
+	@Override
 	public Iterable<Cliente> buscarTodos() {
 		// Buscar todos os Clientes.
 		return clienteRepository.findAll();

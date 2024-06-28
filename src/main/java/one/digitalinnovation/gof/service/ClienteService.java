@@ -11,6 +11,9 @@ import one.digitalinnovation.gof.model.Cliente;
  */
 public interface ClienteService {
 
+	// Buscando pelo nome
+	Iterable<Cliente> buscarPorNome(String nome);
+
 	Iterable<Cliente> buscarTodos();
 
 	Cliente buscarPorId(Long id);
